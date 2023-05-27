@@ -14,14 +14,23 @@ let params='';
 
 const callParams = () => {
     params = userinput.value;
-    // console.log(params);
+    console.log(params);
     
-    fetch('https://youtube-search-results.p.rapidapi.com/youtube-search/?q=justinbieber', options)
+    fetch(`https://youtube-search-results.p.rapidapi.com/youtube-search/?q=${params}`, options)
         .then(response => response.json())
-        .then(response => console.log(response.items))
+        .then(data => {
+            let output = ''
+            data.items.map(item => {
+                output+= `
+                <h1>${item.title}</h1>
+                <li>
+                    <a href = "${item.url}">${item.url}</a>
+                </li>
+                `;
+            })
+            document.getElementById("#result").innerHTML = output;
+        })
         .catch(err => console.error(err));
-
-    userinput.value = '';
 }
 
 searchBtn.addEventListener('click', callParams);
