@@ -1,3 +1,4 @@
+
 const options = {
 	method: 'GET',
 	headers: {
@@ -21,14 +22,13 @@ const callParams = () => {
         .then(data => {
             let output = ''
             data.items.map(item => {
+                console.log(item);
                 output+= `
                 <h1>${item.title}</h1>
-                <li>
-                    <a href = "${item.url}">${item.url}</a>
-                </li>
+                <li><a href = "${item.url}">${item.url}</a></li>
                 `;
             })
-            document.getElementById("#result").innerHTML = output;
+            document.querySelector(".result").innerHTML = output;
         })
         .catch(err => console.error(err));
 }
