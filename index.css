@@ -68,6 +68,31 @@ header{
     font-size: 30px;
     font-weight: bold;
     color: white;
-
 } 
+
+.results{
+    font-family: 'Crimson Text', serif;
+    color: beige;
+}
+
+a:link {
+    color: beige;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  a:visited {
+    color: rgb(214, 151, 171);
+    background-color: transparent;
+    text-decoration: none;
+  }
+  a:hover {
+    color: rgb(233, 207, 207);
+    background-color: transparent;
+    text-decoration: underline;
+  }
+  a:active {
+    color: rgb(247, 247, 191);
+    background-color: transparent;
+    text-decoration: underline;
+  }
 

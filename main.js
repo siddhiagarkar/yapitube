@@ -22,13 +22,12 @@ const callParams = () => {
         .then(data => {
             let output = ''
             data.items.map(item => {
-                console.log(item);
+                console.log(item.title);
                 output+= `
-                <h1>${item.title}</h1>
-                <li><a href = "${item.url}">${item.url}</a></li>
+                <li><a href = "${item.url}">${item.title}</a><br></li><br>
                 `;
             })
-            document.querySelector(".result").innerHTML = output;
+            document.querySelector(".results").innerHTML = output;
         })
         .catch(err => console.error(err));
 }
